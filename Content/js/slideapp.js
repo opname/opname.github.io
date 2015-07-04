@@ -20,38 +20,38 @@
             };
 
             // run this locally (with file:// protocol) 
-            //var loadTemplates = function (views, callback) {
-
-            //    // ** iterator pattern
-            //    $.each(views, function (index, view) {
-            //        if (Views[view]) {
-            //            Views[view].prototype.template = _.template($("#" + view).html());
-            //        } else {
-            //            alert(view + " not found.");
-            //        }
-            //    });
-
-            //    callback();
-            //};
-
-            // run this on a web server (with http:// protocol)
             var loadTemplates = function (views, callback) {
-                var deferreds = [];
 
-                 ** iterator pattern
+                // ** iterator pattern
                 $.each(views, function (index, view) {
                     if (Views[view]) {
-                        deferreds.push($.get('../texttemplates/' + view.toLowerCase() + '.htm', function (data) {
-                            Views[view].prototype.template = _.template(data);
-                        }));
+                        Views[view].prototype.template = _.template($("#" + view).html());
                     } else {
                         alert(view + " not found.");
                     }
                 });
 
-                // ** apply invocation Pattern
-                $.when.apply(null, deferreds).done(callback);
-            }
+                callback();
+            };
+
+            // run this on a web server (with http:// protocol)
+            //var loadTemplates = function (views, callback) {
+                //var deferreds = [];
+
+                // ** iterator pattern
+                //$.each(views, function (index, view) {
+                //    if (Views[view]) {
+                //        deferreds.push($.get('../templates/' + view.toLowerCase() + '.htm', function (data) {
+                //            Views[view].prototype.template = _.template(data);
+                //        }));
+                //    } else {
+                //        alert(view + " not found.");
+                //    }
+                //});
+
+                //// ** apply invocation Pattern
+                //$.when.apply(null, deferreds).done(callback);
+            //}
 
             var selectMenu = function (item) {
                 $('.nav li').removeClass('active');
