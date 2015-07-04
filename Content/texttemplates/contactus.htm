@@ -1,0 +1,51 @@
+<div class="slide" >
+    <h2>Contact Us</h2>
+    <hr />
+    <form class="form-horizontal" >
+       <div class='control-group'>
+           <label class='control-label' for='name'>Name</label>
+           <div class='controls'>
+            <input type='text' class='input-large' id='name'>
+           </div>
+       </div>
+       <div class='control-group'>
+          <label class='control-label' for='email'>Email</label>
+          <div class='controls'>
+            <input type='text' class='input-large' id='email'>
+          </div>
+       </div>
+       <div class='control-group'>
+          <label class='control-label' for='message'>Message</label>
+          <div class='controls'>
+            <textarea rows="6" id="message" class="span6"></textarea>
+          </div>
+       </div>
+       <div class="form-actions">
+           <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+           <button id="reset" type="reset" class="btn">Cancel</button>
+       </div>
+    </form>
+</div>
+<script type="text/javascript">
+
+    setTimeout(function () {
+        $("#name").focus();
+
+        $("#submit").on('click', function (e) {
+            alert("Great! Thank you for your message.");
+            return reset(e);
+        });
+        $("#reset").on('click', function (e) {
+            return reset(e);
+        });
+        var reset = function (e) {
+            e.preventDefault();
+            $("#name").val("").focus();
+            $("#email").val("");
+            $("#message").val("");
+            return false;
+        }
+    }, 0);
+</script>
+
+
