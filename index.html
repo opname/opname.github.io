@@ -255,7 +255,7 @@
             var loadTemplates = function (views, callback) {
             var deferreds = [];
 
-             ** iterator pattern
+             //** iterator pattern
             $.each(views, function (index, view) {
                 if (Views[view]) {
                     deferreds.push($.get('Content/texttemplates/' + view.toLowerCase() + '.htm', function (data) {
