@@ -1,3 +1,5 @@
+/// <reference path="../texttemplates/slide1.htm" />
+/// <reference path="../texttemplates/slide1.htm" />
  // ** AMD pattern
     require(['patterns'], function (Patterns) {
    
@@ -41,7 +43,7 @@
                  //** iterator pattern
                 $.each(views, function (index, view) {
                     if (Views[view]) {
-                        deferreds.push($.get('../texttemplates/' + view.toLowerCase() + '.htm', function (data) {
+                        deferreds.push($.get('Content/texttemplates/' + view.toLowerCase() + '.htm', function (data) {
                             Views[view].prototype.template = _.template(data);
                         }));
                     } else {
