@@ -33,10 +33,10 @@
 
      <div class="row">
        <div class="span12">
-         <ul class="breadcrumb"><li class="active">Home<span class="divider">/</span></li>
-           <li><a>Architecture</a> <span class="divider">/</span></li>
-           <li><a>Repositories</a> <span class="divider">/</span></li>
-           <li><a>AWS</a> </li>
+         <ul class="breadcrumb"><li class="active">Survey Maker<span class="divider">/</span></li>
+           <li><a>Survey Results</a> <span class="divider">/</span></li>
+           <li><a>Statistical Analysis</a> <span class="divider">/</span></li>
+           <li><a>System Settings</a> </li>
            
          </ul>
         </div>
@@ -46,16 +46,16 @@
 
 <div class="row well well-large">
     <div class="span9">
-        <h2>Overview</h2>
+        <h2>Create Your Survey</h2>
     </div>
     <div class="span2 pull-right">
-        <a class="btn btn-inverse">email</a>
+        <a class="btn btn-inverse">Close App</a>
     </div>
 </div>
 <br />
 <div class="row">
     <div class="span3 offsethalf">
-        <h2>Developing</h2>
+        <h2>Survey Maker</h2>
     </div>
     <div class="span7 lower">Time: <span id="time" style="color: #09e;font-weight:bold;"></span></div>
 </div>
@@ -66,10 +66,10 @@
 
     <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
-            <li class="slide1"><a href="#slide1"><i class="icon-star"></i>Instructions</a></li>
-            <li class="slide2"><a href="#slide2"><i class="icon-book"></i>Survey Overview</a></li>
-            <li class="slide3"><a href="#slide3"><i class="icon-user"></i>Survey Questions</a></li>
-            <li class="slide4"><a href="#slide4"><i class="icon-list"></i>Survey Calendar</a></li>
+            <li class="aboutus"><a href="#aboutus"><i class="icon-star"></i>Instructions</a></li>
+            <li class="ourstory"><a href="#ourstory"><i class="icon-book"></i>Survey Overview</a></li>
+            <li class="management"><a href="#management"><i class="icon-user"></i>Survey Questions</a></li>
+            <li class="investors"><a href="#investors"><i class="icon-list"></i>Survey Calendar</a></li>
          
         </ul>
 
@@ -84,8 +84,7 @@
 </div>
 
 <!-- templates -->
-<!-- templates Slide 1 -->
-<script type="text/template" id="Slide1">
+<script type="text/template" id="AboutUs">
 <div class="slide">
     <h2>About Us</h2>
     <div >
@@ -96,10 +95,7 @@
     </div>
 </div>
 </script>
-<!-- templates Slide 1 -->
-
-<!-- templates Slide 2 -->
-<script type="text/template" id="Slide2">
+<script type="text/template" id="OurStory">
 <div class="slide" >
     <h2>Our Story</h2>
      <div >
@@ -110,10 +106,7 @@
     </div>
 </div>
 </script>
-<!-- templates Slide 2 -->
-
-<!-- templates Slide 3 -->
-<script type="text/template" id="Slide3">
+<script type="text/template" id="Management">
 <div class="slide" >
     <h2>Management</h2>
       <div >
@@ -125,10 +118,7 @@
     </div>
 </div>
 </script>
-<!-- templates Slide 3 -->
-
-<!-- templates Slide 4 -->
-<script type="text/template" id="Slide4">
+<script type="text/template" id="Investors">
 <div class="slide">
     <h2>Investors</h2>
      <div >
@@ -140,10 +130,7 @@
     </div>
 </div>
 </script>
-<!-- templates Slide 4 -->
-
-<!-- templates Slide 5 -->
-<script type="text/template" id="Slide5">
+<script type="text/template" id="Careers">
 <div class="slide">
     <h2>Careers</h2>
     <div>
@@ -155,10 +142,7 @@
     </div>
 </div>
 </script>
-<!-- templates Slide 5 -->
-
-<!-- templates Slide 6 -->
-<script type="text/template" id="Slide6">
+<script type="text/template" id="Newsroom">
 <div class="slide" >
 
     <h2>Newsroom</h2>
@@ -171,10 +155,7 @@
     </div>
 </div>
 </script>
-<!-- templates Slide 6 -->
-
-<!-- templates Slide 7 -->
-<script type="text/template" id="Slide7">
+<script type="text/template" id="ContactUs">
 <div class="slide" >
     <h2>Contact Us</h2>
     <hr />
@@ -205,7 +186,6 @@
 </div>
 
 </script>
-<!-- templates Slide 2 -->
 
 <script src="Content/js/frameworks/underscore.js" type="text/javascript"></script>
 <script src="Content/js/frameworks/backbone.js" type="text/javascript"></script>
@@ -230,7 +210,7 @@
 
             var start = function (content) {
                 var router = new Routers.Router({ el: content });
-                var templates = ["Slide1", "Slide2", "Slide3", "Slide4", "Slide5", "Slide6", "Slide7"];
+                var templates = ["AboutUs", "OurStory", "Management", "Investors", "Careers", "Newsroom", "ContactUs"];
                 loadTemplates(templates, function () {
                     Backbone.history.start();
                 });
@@ -287,31 +267,31 @@
                 },
                 routes: {
                     "": "first",
-                    "slide1": "display",
-                    "slide2": "display",
-                    "slide3": "display",
-                    "slide4": "display",
-                    "slide5": "display",
-                    "slide6": "display",
-                    "slide7": "display"
+                    "aboutus": "display",
+                    "ourstory": "display",
+                    "management": "display",
+                    "investors": "display",
+                    "careers": "display",
+                    "newsroom": "display",
+                    "contactus": "display"
                 },
 
                 // ** Factory method
                 factory: function(type) {
                     switch(type) {
-                        case "slide1": return new Views.Slide1();
-                        case "slide2": return new Views.Slide2();
-                        case "slide3": return new Views.Slide3();
-                        case "slide4": return new Views.Slide4();
-                        case "slide5": return new Views.Slide5();
-                        case "slide6": return new Views.Slide6();
-                        case "slide7": return new Views.Slide7();
+                        case "aboutus": return new Views.AboutUs();
+                        case "ourstory": return new Views.OurStory();
+                        case "management": return new Views.Management();
+                        case "investors": return new Views.Investors();
+                        case "careers": return new Views.Careers();
+                        case "newsroom": return new Views.Newsroom();
+                        case "contactus": return new Views.ContactUs();
                         default: return null;
                     }
                 },
 
                 first: function () {
-                    var key = "slide1";
+                    var key = "aboutus";
                     var view = this.factory(key);
 
                     selectMenu(key);
@@ -335,7 +315,7 @@
             });
 
             // ** extend pattern
-            Views.Slide1 = Backbone.View.extend({
+            Views.AboutUs = Backbone.View.extend({
                 render: function () {
                     this.$el.html(this.template());
                     return this;
@@ -343,7 +323,7 @@
             });
 
             // ** extend pattern
-            Views.Slide2 = Backbone.View.extend({
+            Views.OurStory = Backbone.View.extend({
                 render: function () {
                     this.$el.html(this.template());
                     return this;
@@ -351,7 +331,7 @@
             });
 
             // ** extend pattern
-            Views.Slide3 = Backbone.View.extend({
+            Views.Management = Backbone.View.extend({
                 render: function () {
                     this.$el.html(this.template());
                     return this;
@@ -359,7 +339,7 @@
             });
 
             // ** extend pattern
-            Views.Slide4 = Backbone.View.extend({
+            Views.Investors = Backbone.View.extend({
                 render: function () {
                     this.$el.html(this.template());
                     return this;
@@ -367,7 +347,7 @@
             });
 
             // ** extend pattern
-            Views.Slide5 = Backbone.View.extend({
+            Views.Careers = Backbone.View.extend({
                 render: function () {
                     this.$el.html(this.template());
                     return this;
@@ -375,7 +355,7 @@
             });
 
             // ** extend pattern
-            Views.Slide6 = Backbone.View.extend({
+            Views.Newsroom = Backbone.View.extend({
                 render: function () {
                     this.$el.html(this.template());
                     return this;
@@ -383,7 +363,7 @@
             });
 
             // ** extend pattern
-            Views.Slide7 = Backbone.View.extend({
+            Views.ContactUs = Backbone.View.extend({
                 render: function () {
                     this.$el.html(this.template());
 
@@ -442,7 +422,7 @@
       <hr />
       <div class="footer">
         <p class="pull-right"><a id="totop" href="#">Back to top</a></p>
-        <p style="font-size:11pt;"></p>
+        <p style="font-size:11pt;">Copyright &#169; 2013. Data & Object Factory, LLC. www.dofactory.com. All rights reserved.</p>
       </div>
       <br />
    </div>
