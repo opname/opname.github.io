@@ -5,13 +5,13 @@
     
 <p><b>Intent:</b> The purpose of this User Audit is to capture information about the usage of the surevey application and in particular possible drop out points along the user path. This will be used as part of a ASP.net MVC application</p>
 
-<p<b>Motivation:</b>  A survey taker enters the application and after logging in proceeds to answer questions, the system owner is particularly interested in points where the survey taker abandons the survey. The goal is to use this data to hypothesis the reasons that a use may abandon the survey</p>
+<p><b>Motivation:</b>  A survey taker enters the application and after logging in proceeds to answer questions, the system owner is particularly interested in points where the survey taker abandons the survey. The goal is to use this data to hypothesis the reasons that a use may abandon the survey</p>
 
-<p<b>Applicability:</b>  This aspect of the application is to be used against methods in a controller class and to capture the url accessed by the survey taker, their identity and IP address.</p>
+<p><b>Applicability:</b>  This aspect of the application is to be used against methods in a controller class and to capture the url accessed by the survey taker, their identity and IP address.</p>
 
-<p<b>Consequences:</b>  The data captured by the Audit Sub System will be stored as a JSON structure in a noSql Document Database. The trade off agains the spped and ease of storage is that subsequent systems that access the data captured will have to perform a number of activities to re-structure the data to mapp it to other information eg. IIS Logs and User Profile data.</p>
+<p><b>Consequences:</b>  The data captured by the Audit Sub System will be stored as a JSON structure in a noSql Document Database. The trade off agains the spped and ease of storage is that subsequent systems that access the data captured will have to perform a number of activities to re-structure the data to mapp it to other information eg. IIS Logs and User Profile data.</p>
 
-<p<b>Implementation:</b>  This will be implemented as a c# custom attribute to decorate methods within the MVC application</p>
+<p><b>Implementation:</b>  This will be implemented as a c# custom attribute to decorate methods within the MVC application</p>
 
     
     </div>
