@@ -1,10 +1,19 @@
 <div class="slide" >
-    <h2>Our Story</h2>
+    <h2>Specification</h2>
      <div >
-    <img src="Content/images/pictures/img-(1).png" style="width:200px;height:200px;padding:6px 12px 5px 12px; float:right;">
-    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+    <img src="Content/images/pictures/img-(2).png" style="width:200px;height:200px;padding:6px 12px 5px 12px; float:right;">
+    
+<p><b>Intent:</b> The purpose of this User Audit is to capture information about the usage of the surevey application and in particular possible drop out points along the user path. This will be used as part of a ASP.net MVC application</p>
+
+<p<b>Motivation:</b>  A survey taker enters the application and after logging in proceeds to answer questions, the system owner is particularly interested in points where the survey taker abandons the survey. The goal is to use this data to hypothesis the reasons that a use may abandon the survey</p>
+
+<p<b>Applicability:</b>  This aspect of the application is to be used against methods in a controller class and to capture the url accessed by the survey taker, their identity and IP address.</p>
+
+<p<b>Consequences:</b>  The data captured by the Audit Sub System will be stored as a JSON structure in a noSql Document Database. The trade off agains the spped and ease of storage is that subsequent systems that access the data captured will have to perform a number of activities to re-structure the data to mapp it to other information eg. IIS Logs and User Profile data.</p>
+
+<p<b>Implementation:</b>  This will be implemented as a c# custom attribute to decorate methods within the MVC application</p>
+
+    
     </div>
 </div>
 
